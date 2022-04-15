@@ -27,7 +27,7 @@ def create_test_order()->Order:
             name="test",
             email="test@test.com",
             address="1234 berlin lane, berlin, 10707",
-            country="Germany",
+            country="germany",
             status=OrderStatus.CREATED,
             created_at=datetime.utcnow(),
             updated_at=None,
