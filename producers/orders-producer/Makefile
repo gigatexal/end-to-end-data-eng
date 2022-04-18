@@ -6,6 +6,10 @@ docker_name_and_tag := $(docker_name):$(current_commit_hash)
 
 container_runtime := docker
 
+lint:
+	@black src
+	@isort src
+
 test:
 	@echo "run tests"
 
