@@ -1,18 +1,18 @@
+CREATE TABLE IF NOT EXISTS currency(
+  id INTEGER PRIMARY KEY,
+  currency_code TEXT
+  ) STRICT;
+
 CREATE TABLE IF NOT EXISTS country (
   id INTEGER NOT NULL PRIMARY KEY,
   name TEXT NOT NULL,
-  currency_code INTEGER NOT NULL,
+  currency_code INTEGER NOT NULL REFERENCES currency(id)
   is_online INTEGER NOT NULL,
   active_at TEXT DEFAULT '2010-06-21',
   deactivated_at TEXT DEFAULT NULL
   ) STRICT;
 
 CREATE UNIQUE INDEX IF NOT EXISTS uq_idx_name_currency_code ON country (name, currency_code);
-
-CREATE TABLE IF NOT EXISTS currency(
-  id INTEGER PRIMARY KEY,
-  currency_code TEXT
-  ) STRICT;
 
 CREATE UNIQUE INDEX IF NOT EXISTS uq_idx_currency_code ON currency (currency_code);
 
