@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS country (
   name TEXT NOT NULL,
   currency_code INTEGER NOT NULL REFERENCES currency(id)
   is_online INTEGER NOT NULL,
-  active_at TEXT DEFAULT '2010-06-21',
+  active_at TEXT DEFAULT '2010-01-01',
   deactivated_at TEXT DEFAULT NULL
   ) STRICT;
 
